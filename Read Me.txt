@@ -1,0 +1,103 @@
+FloatingX HUD v1.4.1
+--------------------
+Artwork by TychoVII
+Scripting by Hopper
+
+----------------------------------------------------------------
+DESCRIPTION:
+FloatingX is a modernized version of the Marathon Infinity HUD that has been heavily inspired by the XBLA version of Marathon: Durandal. It uses Lua to render custom graphics over the main world view instead of rendering them beneath it, allowing for a more simplistic and modern feel. FloatingX is also meant to serve as a template for others who wish to create their own styles for Lua-based HUDs in the Aleph One engine.
+
+----------------------------------------------------------------
+COMPATIBILITY:
+Marathon Infinity - Compatible
+Marathon 2: Durandal - Compatible
+Marathon, M1A1, others - Not compatible
+
+----------------------------------------------------------------
+REQUIREMENTS:
+- Aleph One 1.1 (release 2014-01-04) or later
+* OpenGL is NOT required for this script to work, so players with older computers shouldn't have any issues other than possible slowdowns
+
+----------------------------------------------------------------
+INSTALLATION:
+- Drag the downloaded .zip file, or the unzipped "FloatingX" folder, into the "Plugins" folder inside your Marathon 2 or Marathon Infinity folders. (Create a "Plugins" folder if you don't already have one.)
+- Launch Aleph One, and go to "Preferences", then "Environment", then "Plugins" make sure the plugin is listed as "Enabled". You can click on it to turn it on or off.
+
+NOTE: "Limit Vertical View" (located in the Graphics preferences) should be unchecked for the script to display the proper FOV.
+
+ALSO NOTE: "Use HUD Script" (located in the Environment preferences) MUST be unchecked! The plugin won't work if that checkbox is on.
+
+----------------------------------------------------------------
+CUSTOMIZATION:
+While we attempted to make this script function as well as possible across all systems and platforms, not everybody will agree on what is appealing to them visually. Certain aspects of this script have been made easily customizable by opening FloatingX.lua in any text editor.
+
+In order to change the aspect ratio (letterbox or full screen), you must edit the following near the top of the FloatingX.lua script:
+
+   max_aspect_ratio = 2
+   min_aspect_ratio = 1.6
+
+'2' stands for a 2:1 ratio, which is the aspect ratio used in 'classic HUD' mode. This is the widest aspect ratio allowed by the script.
+'1.6' stands for a 1.6:1 ratio, which is the aspect ratio used by many of Aleph One's built-in screen sizes, like 1024x640. This is the narrowest aspect ratio allowed by the script.
+
+The game will fill the screen if your screen's aspect ratio is between 'max_aspect_ratio' and 'min_aspect ratio'. To determine your screen's ratio, divide the width by the height. For example:
+
+  800x600 aspect ratio = 800 / 600 = 1.33
+
+Since 1.33 is smaller than the minimum of 1.6, black bars will be used. To fill the screen, change 'min_aspect_ratio' to 1.33 or smaller.
+
+----------------------------------------------------------------
+EXTRAS:
+Some features that were not in the XBLA version have been included to demonstrate the diverse capabilities of this lua script (and also because it looks cool).
+
+- HUD is affected by polygon lights
+- Tinting of HUD colors when submerged in liquid (this is not possible with damage shaders, so please don't ask)
+- Animated static and distortion effects when damaged
+- A constant static effect for the alien weapon
+- Overlaid transparent images to add visual detail such as cracked glass, dirt and grunge
+- Static animations played when switching weapons
+
+----------------------------------------------------------------
+CHANGELOG:
+
+v1.4.1:
+* Fixed a serious bug under Aleph One 1.1
+* Added support for Visual Mode.lua (requires Aleph One 1.1)
+
+v1.4:
+* First "official" release as a plugin
+* Uses Tim Larson's awesome Squarish Sans font. This font is still in beta, so check with him for updates if you use it in another project.
+
+v1.3:
+* Added FISTS graphic
+* Added weapon switch animation
+* Added option to disable weapon switch dimming
+* Added numerous editable animation controls at the top of the script
+* Removed MML script as it was not necessary with the latest A1 build
+
+v1.2:
+* Added support for net game statistics
+* Further improved HUD scaling at different resolutions
+* Added transparency setting for HUD background (can be found near the top of the lua script)
+
+v1.1:
+* Improved HUD scaling for different resolutions
+* Improved HUD interlace effect for scaling
+* Script now goes full screen by default
+* Included MML script to compensate for FOV issues
+* Adjusted glow of radar_blip_player and radar_blip_enemy-player
+* Adjusted color of 3x shields
+* Modified the microphone_ON graphic
+* Slightly reduced the amount of grunge on the motion sensor, weapons readout, and shield/oxygen bars
+
+----------------------------------------------------------------
+SPECIAL THANKS:
+Freeverse - For providing the original floating HUD design
+Jun Watarase - For help involving XBLA
+Tim Larson - For the Squarish Sans font
+Treellama - For putting up with us
+
+----------------------------------------------------------------
+CONTACT:
+If you have any questions, comments or bugs to report, you can email us:
+- Tycho7@comcast.net
+- Hopper@whpress.com
